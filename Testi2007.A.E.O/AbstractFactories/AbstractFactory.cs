@@ -1,6 +1,7 @@
 ﻿namespace Testi2007.A.E.O.AbstractFactories
 {
     using System;
+    using System.IO;
 
     using log4net;
 
@@ -12,6 +13,12 @@
 
         public AbstractFactory()
         {
+            using (FileStream fileStream = File.OpenRead("Testi2007.A.E.O.config"))
+            {
+                log4net.Config.XmlConfigurator.Configure(
+                    LogManager.GetRepository(System.Reflection.Assembly.GetExecutingAssembly()),
+                    fileStream);
+            }
         }
 
         public ICalculationsAbstractFactory CreateCalculationsAbstractFactory()
