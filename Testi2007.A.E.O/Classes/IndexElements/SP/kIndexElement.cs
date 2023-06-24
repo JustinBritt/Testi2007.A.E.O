@@ -16,9 +16,7 @@
             this.Value = value;
         }
 
-        /// <summary>
-        /// Gets the session.
-        /// </summary>
+        /// <inheritdoc/>
         public PositiveInt Value { get; }
     }
 }

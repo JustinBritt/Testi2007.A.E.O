@@ -16,9 +16,7 @@
             this.Value = value;
         }
 
-        /// <summary>
-        /// Gets the the surgery room type.
-        /// </summary>
+        /// <inheritdoc/>
         public PositiveInt Value { get; }
     }
 }
